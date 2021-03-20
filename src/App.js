@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import './App.css';
 
 import firebase from 'firebase/app';
@@ -27,6 +27,7 @@ function App() {
   return (
     <div className="App">
       <header>
+        <SignOut />
       </header>
       <section>
         {user ? <ChatRoom /> : <SignIn />}
@@ -46,13 +47,14 @@ function SignIn(){
   )
 }
 
-function SignOut(){
-  return auth.curentUser && (
-    <button onClick={() => auth.signOut()}>Sign Out</button>
+function SignOut() {
+  return auth.currentUser && (
+    <button className="sign-out" onClick={() => auth.signOut()}>Sign Out</button>
   )
 }
 
 function ChatRoom(){
+  const dummy = useRef()
   const messagesRef = firestore.collection('messages');
   const query = messagesRef.orderBy('createdAt').limit(25);
 
@@ -72,17 +74,20 @@ function ChatRoom(){
     });
 
     setFormValue('');
+    dummy.current.scrollIntoView({ behavior: 'smooth'});
   }
 
   return(
     <>
-      <div>
+      <main>
         {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg}/>)}
-      </div>
+
+        <div ref={dummy}></div>
+      </main>
 
       <form onSubmit={sendMessage}>
         <input value={formValue} onChange={(e) => setFormValue(e.target.value)} />
-        <button type="submit">🎂</button>
+        <button type="submit" disabled={!formValue}>🎂</button>
       </form>
     </>
   )
