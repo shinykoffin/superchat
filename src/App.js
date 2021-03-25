@@ -56,11 +56,16 @@ function SignOut() {
 function ChatRoom(){
   const dummy = useRef()
   const messagesRef = firestore.collection('messages');
-  const query = messagesRef.orderBy('createdAt').limit(25);
+  const query = messagesRef.orderBy('createdAt');
+  // const query = messagesRef.orderBy('createdAt').limit(100);
 
   const [messages] = useCollectionData(query, {idField: "id"});
 
   const [formValue, setFormValue] = useState('');
+
+  useEffect(() =>{ 
+    dummy.current.scrollIntoView({ behavior: 'smooth'});
+  });
 
   const sendMessage = async(e) => {
     e.preventDefault();
@@ -74,7 +79,7 @@ function ChatRoom(){
     });
 
     setFormValue('');
-    dummy.current.scrollIntoView({ behavior: 'smooth'});
+    
   }
 
   return(
