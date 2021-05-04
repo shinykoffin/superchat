@@ -10,7 +10,7 @@ import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 import { firestore, auth } from './FireConfig/FirebaseConect'
 
-import ChatMessage from './Components/ChatMessage'
+import ChatRoom from './Components/ChatRoom'
 
 
 function App() {
@@ -45,50 +45,49 @@ function SignOut() {
   )
 }
 
-function ChatRoom(){
-  const dummy = useRef()
-  const messagesRef = firestore.collection('messages');
-  const query = messagesRef.orderBy('createdAt');
-  // const query = messagesRef.orderBy('createdAt').limit(100);
+// function ChatRoom(){
+//   const dummy = useRef()
+//   const messagesRef = firestore.collection('messages');
+//   const query = messagesRef.orderBy('createdAt');
 
-  const [messages] = useCollectionData(query, {idField: "id"});
+//   const [messages] = useCollectionData(query, {idField: "id"});
 
-  const [formValue, setFormValue] = useState('');
+//   const [formValue, setFormValue] = useState('');
 
-  useEffect(() =>{ 
-    dummy.current.scrollIntoView({ behavior: 'smooth'});
-  });
+//   useEffect(() =>{ 
+//     dummy.current.scrollIntoView({ behavior: 'smooth'});
+//   });
 
-  const sendMessage = async(e) => {
-    e.preventDefault();
+//   const sendMessage = async(e) => {
+//     e.preventDefault();
 
-    const { uid, photoURL } = auth.currentUser;
-    await messagesRef.add({
-      text: formValue,
-      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-      uid,
-      photoURL
-    });
+//     const { uid, photoURL } = auth.currentUser;
+//     await messagesRef.add({
+//       text: formValue,
+//       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+//       uid,
+//       photoURL
+//     });
 
-    setFormValue('');
+//     setFormValue('');
     
-  }
+//   }
 
-  return(
-    <>
-      <main>
-        {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg}/>)}
+//   return(
+//     <>
+//       <main>
+//         {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg}/>)}
 
-        <div ref={dummy}></div>
-      </main>
+//         <div ref={dummy}></div>
+//       </main>
 
-      <form onSubmit={sendMessage}>
-        <input value={formValue} onChange={(e) => setFormValue(e.target.value)} />
-        <button type="submit" disabled={!formValue}>🎂</button>
-      </form>
-    </>
-  )
-}
+//       <form onSubmit={sendMessage}>
+//         <input value={formValue} onChange={(e) => setFormValue(e.target.value)} />
+//         <button type="submit" disabled={!formValue}>🎂</button>
+//       </form>
+//     </>
+//   )
+// }
 
 // function ChatMessage(props){
 //   const { text, uid, photoURL} = props.message;
