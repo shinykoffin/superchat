@@ -33,7 +33,7 @@ body {
   background-color: rgb(40, 37, 53);
 }
 
-main {
+.chatBody {
   padding: 10px;
   height: 80vh;
   margin: 10vh 0 10vh;
@@ -42,19 +42,19 @@ main {
   flex-direction: column;
 }
 
-main::-webkit-scrollbar {
+.chatBody::-webkit-scrollbar {
   width: 0.25rem;
 }
 
-main::-webkit-scrollbar-track {
+.chatBody::-webkit-scrollbar-track {
   background: #1e1e24;
 }
 
-main::-webkit-scrollbar-thumb {
+.chatBody::-webkit-scrollbar-thumb {
   background: #6649b8;
 }
 
-form {
+.formMessage {
   height: 10vh;
   position: fixed;
   bottom: 0;
@@ -65,13 +65,13 @@ form {
   font-size: 1.5rem;
 }
 
-form button {
+.sendBtn {
   width: 20%;
   background-color: rgb(56, 56, 143);
 }
 
 
-input {
+.inputMessage {
   line-height: 1.5;
   width: 100%;
   font-size: 1.5rem;
@@ -82,7 +82,7 @@ input {
   padding: 0 10px;
 }
 
-button {
+.button {
   background-color: #282c34; /* Green */
   border: none;
   color: white;
@@ -94,28 +94,12 @@ button {
   font-size: 1.25rem;
 }
 
-button:disabled {
+.button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-
-.sign-in {
-  color: #282c34;
-  background: white;
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-
-
-
-ul, li {
-  text-align: left;
-  list-style: none;
-}
-
-p {
+.messageText {
   max-width: 500px;
   margin-bottom: 12px;
   line-height: 24px;
@@ -146,7 +130,7 @@ p {
   color: black;
 }
 
-img {
+.profilePicture {
   width: 40px;
   height: 40px;
   border-radius: 50%;

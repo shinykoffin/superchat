@@ -34,13 +34,13 @@ function SignIn(){
   }
 
   return(
-    <button onClick={singInWithGoogle}>Sign in w Google</button>
+    <button className ="button" onClick={singInWithGoogle}>Sign in w Google</button>
   )
 }
 
 function SignOut() {
   return auth.currentUser && (
-    <button className="sign-out" onClick={() => auth.signOut()}>Sign Out</button>
+    <button className="button" onClick={() => auth.signOut()}>Sign Out</button>
   )
 }
 export default App;

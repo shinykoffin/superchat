@@ -7,8 +7,8 @@ function ChatMessage(props) {
 
   return (
     <div className={`message ${messageClass}`}>
-      <img src={photoURL} />
-      <p>{text}</p>
+      <img className="profilePicture" src={photoURL} />
+      <p className="messageText">{text}</p>
     </div>
   )
 }
