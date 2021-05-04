@@ -10,6 +10,8 @@ import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 import { firestore, auth } from './FireConfig/FirebaseConect'
 
+import ChatMessage from './Components/ChatMessage'
+
 
 function App() {
   const [user] = useAuthState(auth);
@@ -88,16 +90,16 @@ function ChatRoom(){
   )
 }
 
-function ChatMessage(props){
-  const { text, uid, photoURL} = props.message;
+// function ChatMessage(props){
+//   const { text, uid, photoURL} = props.message;
   
-  const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
+//   const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
 
-  return (
-    <div className={`message ${messageClass}`}>
-      <img src={photoURL} />
-      <p>{text}</p>
-    </div>
-  )
-}
+//   return (
+//     <div className={`message ${messageClass}`}>
+//       <img src={photoURL} />
+//       <p>{text}</p>
+//     </div>
+//   )
+// }
 export default App;
