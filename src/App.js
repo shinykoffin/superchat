@@ -20,7 +20,7 @@ function App() {
       <header>
         <SignOut />
       </header>
-      <section>
+      <section className="AppSection">
         {user ? <ChatRoom /> : <SignIn />}
       </section>
     </div>
