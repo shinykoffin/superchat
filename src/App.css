@@ -2,6 +2,14 @@ body {
   background-color: #282c34;
 }
 
+h1, h2{
+  font-family: 'Varela Round', sans-serif;
+}
+
+h2{
+  font-size: 0.8em;
+}
+
 .App {
   text-align: center;
   max-width: 728px;
@@ -25,6 +33,15 @@ body {
   box-sizing: border-box;
 }
 
+.titleSection {
+  margin: 0 0 20px 20px;
+}
+
+.titleSection > *{
+  margin: 0;
+  text-align: center;
+}
+
 .AppSection {
   display: flex;
   flex-direction: column;
@@ -42,15 +59,15 @@ body {
   flex-direction: column;
 }
 
-.chatBody::-webkit-scrollbar {
+.chatBody::-webkit-scrollbar, .emoji-picker-react .emoji-scroll-wrapper::-webkit-scrollbar {
   width: 0.25rem;
 }
 
-.chatBody::-webkit-scrollbar-track {
+.chatBody::-webkit-scrollbar-track, .emoji-picker-react .emoji-scroll-wrapper::-webkit-scrollbar-track {
   background: #1e1e24;
 }
 
-.chatBody::-webkit-scrollbar-thumb {
+.chatBody::-webkit-scrollbar-thumb, .emoji-picker-react .emoji-scroll-wrapper::-webkit-scrollbar-thumb {
   background: #6649b8;
 }
 
@@ -63,6 +80,7 @@ body {
   max-width: 728px;
   display: flex;
   font-size: 1.5rem;
+  position: absolute;
 }
 
 .button {
@@ -82,11 +100,36 @@ body {
   background-color: rgb(56, 56, 143);
 }
 
+.signIn{
+  width: 25vw;
+  margin: auto;
+  background-color: rgb(255, 247, 247);
+  border-radius: 5px;
+  color: rgb(73, 73, 73);
+  font-weight: 600;
+}
+
 .emojiPickerButton{
   width: 10%;
   background-color: rgb(117, 62, 161);
   text-align: center;
   padding: 0;
+}
+
+aside.emoji-picker-react{
+ background-color: #282c34;
+ box-shadow: initial;
+ border-color: black;
+}
+
+.emoji-picker-react input.emoji-search{
+  margin: 0;
+  background-color: #3a3a3a;
+  border-color: black;
+}
+
+.emoji-picker-react .emoji-group:before{
+  background-color: #282c34;
 }
 
 .inputMessage {
@@ -98,6 +141,7 @@ body {
   outline: none;
   border: none;
   padding: 0 10px;
+  border-radius: 30px;
 }
 
 .button:disabled {

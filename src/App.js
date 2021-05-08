@@ -1,5 +1,4 @@
 import React from "react";
-import './App.css';
 
 import firebase from 'firebase/app';
 import 'firebase/firestore';
@@ -11,6 +10,7 @@ import { auth } from './FireConfig/FirebaseConect'
 
 import ChatRoom from './Components/ChatRoom'
 
+import './App.css';
 
 function App() {
   const [user] = useAuthState(auth);
@@ -18,6 +18,10 @@ function App() {
   return (
     <div className="App">
       <header>
+        <div className="titleSection">
+          <h1>superchat</h1>
+          <h2>Simple lovely firebase chat</h2>
+        </div>
         <SignOut />
       </header>
       <section className="AppSection">
@@ -34,13 +38,13 @@ function SignIn(){
   }
 
   return(
-    <button className ="button" onClick={singInWithGoogle}>Sign in w Google</button>
+    <button className ="button signIn" onClick={singInWithGoogle}>Sign in w Google</button>
   )
 }
 
 function SignOut() {
   return auth.currentUser && (
-    <button className="button" onClick={() => auth.signOut()}>Sign Out</button>
+    <button className="button signOut" onClick={() => auth.signOut()}>Sign Out</button>
   )
 }
 export default App;
