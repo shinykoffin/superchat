@@ -54,8 +54,8 @@ function ChatRoom() {
 
       <form onSubmit={sendMessage} className="formMessage">
         {emojiPickerVisible && <EmojiPicker onEmojiClick={onEmojiClickHandler} pickerStyle={{position: 'absolute', bottom: '110px', right: '20px'}}></EmojiPicker>}
-        <input className="inputMessage" value={formValue} onChange={(e) => setFormValue(e.target.value)} />
-        <button className="button emojiPickerButton" onClick={emojiPickerButtonHandler} type="button">😁</button>
+        <input className="inputMessage" value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Type here..." />
+        <button className="button emojiPickerButton" onClick={emojiPickerButtonHandler} type="button">😀</button>
         <button className="button sendBtn" type="submit" disabled={!formValue}>🎂</button>
       </form>
     </>

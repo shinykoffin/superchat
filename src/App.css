@@ -1,5 +1,5 @@
 body {
-  background-color: #282c34;
+  background-color: #252231;
 }
 
 h1, h2{
@@ -53,7 +53,7 @@ h2{
 .chatBody {
   padding: 10px;
   height: 80vh;
-  margin: 10vh 0 10vh;
+  margin: 10vh 0 8vh;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
@@ -72,15 +72,16 @@ h2{
 }
 
 .formMessage {
-  height: 10vh;
+  height: 8vh;
   position: fixed;
   bottom: 0;
-  background-color: rgb(24, 23, 23);
+  background-color: #3A3A3A;
   width: 100%;
   max-width: 728px;
   display: flex;
   font-size: 1.5rem;
-  position: absolute;
+  border-radius: 30px;
+  align-items: center;
 }
 
 .button {
@@ -96,10 +97,18 @@ h2{
 } 
 
 .sendBtn {
-  width: 20%;
-  background-color: rgb(56, 56, 143);
+  width: 50px;
+  height: 50px;
+  margin-left: 12px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid;
 }
 
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 .signIn{
   width: 25vw;
   margin: auto;
@@ -110,14 +119,18 @@ h2{
 }
 
 .emojiPickerButton{
-  width: 10%;
-  background-color: rgb(117, 62, 161);
+  width: 50px;
   text-align: center;
   padding: 0;
+  height: 50px;
+  margin: 0;
+  border-radius: 50%;
+  background-color:#3A3A3A;
+  border: 1px solid #2C2C2C;
 }
 
 aside.emoji-picker-react{
- background-color: #282c34;
+ background-color: #252231;
  box-shadow: initial;
  border-color: black;
 }
@@ -129,25 +142,23 @@ aside.emoji-picker-react{
 }
 
 .emoji-picker-react .emoji-group:before{
-  background-color: #282c34;
+  background-color: #252231;
 }
 
 .inputMessage {
   line-height: 1.5;
-  width: 100%;
-  font-size: 1.5rem;
+  width: 78%;
+  font-size: 1.1rem;
   background: rgb(58, 58, 58);
   color: white;
   outline: none;
   border: none;
   padding: 0 10px;
   border-radius: 30px;
+  margin-left: 12px;
 }
 
-.button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
+
 
 .messageText {
   max-width: 500px;
@@ -172,7 +183,7 @@ aside.emoji-picker-react{
 
 .sent p {
   color: white;
-  background: #0b93f6;
+  background: #6649B8;
   align-self: flex-end;
 }
 .received p {
