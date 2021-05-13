@@ -17,7 +17,7 @@ function ChatMessage(props) {
 
   return (
     <div className={`message ${messageClass}`}>
-      {(uid === auth.currentUser.uid) && <button onClick={deleteMessage}>Delete</button>}
+      {(uid === auth.currentUser.uid) && <button onClick={deleteMessage} className="deleteButton">X</button>}
       <img className="profilePicture" src={photoURL} />
       <p className="messageText">{text}</p>
     </div>
