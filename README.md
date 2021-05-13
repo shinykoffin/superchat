@@ -7,13 +7,13 @@ Here are some things I've been adding to it.
 
 ## Things to add
 
-[x] Add an emoji picker
+* [x] Add an emoji picker
 
-[x] Changing the style a little
+* [x] Changing the style a little
 
-[x] Adding a delete messages button
+* [x] Adding a delete messages button
 
-[ ] Adding online users
+* [] Adding online users
 
 
 ## Installation
