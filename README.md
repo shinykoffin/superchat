@@ -13,7 +13,7 @@ Here are some things I've been adding to it.
 
 * [x] Adding a delete messages button
 
-* [] Adding online users
+* [ ] Adding online users
 
 
 ## Installation
